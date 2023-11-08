@@ -29,22 +29,22 @@ GAME_LOOP:	call KEY2
 		
 		j GAME_LOOP
 		
-#		a0 = endereÁo imagem
+#		a0 = endere√ßo imagem
 #		a1= X
 #		a2=y
 #		a3= frame(0 ou 1)
 
-#		t0= endereÁo do bitmap diplay
-#		t1= endereÁo de imagem
+#		t0= endere√ßo do bitmap diplay
+#		t1= endere√ßo de imagem
 #		t2= contador de linha
 #		t3= contador de coluna
 #		t4= largura
 # 		t5= altura
 		
-KEY2:		li t1,0xFF200000	# carrega o endereÁo de controle
+KEY2:		li t1,0xFF200000	# carrega o endere√ßo de controle
 		lw t0,0(t1)		# le bit do controle  teclado 
 		andi t0,t0,0x0001	# mascara o bit menos significativo
-		beq t0,zero,FIM		# se n„o h· tecla  pressionada ent„o vai para o FIM
+		beq t0,zero,FIM		# se n√£o h√° tecla  pressionada ent√£o vai para o FIM
 		lw t2,4(t1)		# le o valor  da tecla
 		
 		li t0,'a'
